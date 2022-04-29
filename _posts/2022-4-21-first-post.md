@@ -25,4 +25,4 @@ int main(){
 }
 ```
 
-![IMG_0979](2022-4-21-first-post.assets/IMG_0979.jpg)
+![IMG_0979](/_posts/2022-4-21-first-post.assets/IMG_0979.jpg)
