@@ -1,6 +1,6 @@
 ---
 title: 1.132-景点详情
-date: 2022-09-03 18:00:00 +0800
+date: 2022-09-07 18:00:00 +0800
 categories: [Online_traveling]
 tags: [django+vue]
 pin: true

@@ -1,5 +1,5 @@
 ---
-title: 1.132-景点详情（门票列表部分）
+title: 1.132-景点详情（评论列表部分）
 date: 2022-09-11 18:00:00 +0800
 categories: [Online_traveling]
 tags: [django+vue]
