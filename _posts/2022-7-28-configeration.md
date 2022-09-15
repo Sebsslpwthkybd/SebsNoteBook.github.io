@@ -1,5 +1,5 @@
 ---
-title: 环境配置
+title: 环境配置（ECharts）
 date: 2022-07-28 12:00:00 +0800
 categories: [SogouTop50]
 tags: [hadoop]

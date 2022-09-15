@@ -1,6 +1,6 @@
 ---
 title: 1.132-景点详情（门票列表部分）
-date: 2022-09-11 18:00:00 +0800
+date: 2022-09-11 14:00:00 +0800
 categories: [Online_traveling]
 tags: [django+vue]
 pin: true
@@ -15,7 +15,7 @@ mermaid: true
 
 # 前端
 
-## 精选景点组件(@/home/FineBox)
+## 精选景点组件(@/views/sight/SightDetail)
 
 ### 1、VantUI中找组件
 

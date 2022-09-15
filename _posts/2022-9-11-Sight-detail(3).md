@@ -15,7 +15,7 @@ mermaid: true
 
 # 前端
 
-## 精选景点组件(@/home/FineBox)
+## 精选景点组件(@/views/sight/SightDetail)
 
 ### 1、VantUI中找组件
 
@@ -28,131 +28,76 @@ mermaid: true
 导航栏图标
 
 ```
-<van-icon name="bookmark-o" />
-```
-
-门票列表闹钟图标
-
-```
-<van-icon name="clock-o" />
-```
-
-门票列表标签
-
-```
-<van-tag mark type="primary">标签</van-tag>
-```
-
-预订按钮
-
-```
-<van-button type="warning">警告按钮</van-button>
+<van-icon name="comment-o" />
 ```
 
 ### 2、模板
 
 ```
-    <!-- 门票列表 -->
-    <div class="sight-ticket">
-	  ...
+    <!-- 用户评价 -->
+    <div class="sight-comment">
+      ...
     </div>
-    <!-- // 门票列表 -->
+    <!-- // 用户评价 -->
 ```
 
-上方的导航栏
+#### 顶部导航栏
 
 ```
-      <van-cell title="门票"
-      icon="bookmark-o"
+      <van-cell title="热门评论"
+      icon="comment-o"
       title-style="text-align:left" />
 ```
 
-下方的门票列表
+#### 评论列表
+
+单独写成一个组件（@/component/sight/CommentItem）
+
+#### 查看更多
 
 ```
-      <div class="ticket-item"  v-for="i in 5" :key="i">
-        ...
-      </div>
+      <router-link :to="{name:'SightComment', params: {id}}">
+        查看更多
+      </router-link>
 ```
 
-左半部分
+#### 编写获取id的方法
 
 ```
-        <div class="left">
-          <div class="title">成人票</div>
-          <div class="tips">
-            <van-icon name="clock-o" />
-            <span>7点之前可以预定</span>
-          </div>
-          <div class="tags">
-            <van-tag mark type="primary">标签1</van-tag>
-          </div>
-        </div>
+<script>
+export default {
+  data () {
+    return{
+      id: ''
+    }
+  },
+  created () {
+    this.id = this.$route.params.id
+  }
+}
+</script>
 ```
 
-右半部分
+### 3、样式
+
+#### 评论列表（跟上面间隔一个空槽、背景颜色改为白色）
 
 ```
-        <div class="right">
-          <div class="price">
-            <span>￥</span>
-            <strong>65</strong>
-          </div>
-          <router-link to="#">
-            <van-button type="warning" size="small">预订</van-button>
-          </router-link>
-        </div>
-```
-
-#### 3、样式
-
-```
-  // 门票列表
-  .sight-ticket {
-    margin-top: 10px;  // 空槽
+  // 评论列表
+  .sight-comment {
+    margin-top: 10px;
     background-color: #fff;
-    ...
   }
 ```
 
-##### 门票（盒模型布局、背景色白色、与下方有空槽）
+#### 查看更多（将行列元素转换为块级元素）
 
 ```
-    .ticket-item {
-      display: flex;
-      border-bottom: 1px solid #f6f6f6;
-      padding-bottom: 10px;  // 空槽
-      ....
-    }
-```
-
-##### 左半部分（左对齐、上下5像素， 左右10像素）
-
-```
-      .left {
-        flex: 1;
-        text-align: left;
-        padding: 5px 10px;
-        .title {
-          padding: 5px 0;
-        }
-        .tips {
-          font-size: 12px;
-        }
-      }
-```
-
-##### 右半部分
-
-```
-      .right {
-        width: 100px;
-        .price {
-          color: #ff9800;
-          strong {
-            font-size: 20px;
-          }
-        }
-      }
+  // 查看更多
+  .link-more {
+    display: block;  // 将行列元素转换为块级元素
+    color: #666;
+    padding: 10px;
+  }
 ```
 
