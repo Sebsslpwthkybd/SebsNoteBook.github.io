@@ -55,8 +55,8 @@ class BaseListPageSerializer(object):
         self.paginator = paginator if paginator else page_obj.paginator
         self.object_list = object_list if object_list else page_obj.object_list
 
-    def get_obj(self, obj):
-        """ 对象的内容，子类重写"""
+    def get_obj(self, obj):  # 钩子函数
+        """ 对象的内容，子类重写 """
         return {}
 
     def to_dict(self):
