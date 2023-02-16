@@ -1,6 +1,6 @@
 ---
 title: 更改pip缓存位置
-date: 2023-2-12 10:00:00 +0800
+date: 2023-02-12 10:00:00 +0800
 categories: [python]
 tags: [python]
 pin: true
