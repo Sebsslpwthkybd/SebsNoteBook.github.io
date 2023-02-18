@@ -19,10 +19,6 @@ mermaid: true
 vue create traveling_vue
 ```
 
-![选择 npm config get registry 2022_8_18 周四 17_38_33](/../Sebsslpwthkybd.github.io/_posts/2022-8-1-start_project.assets/选择 npm config get registry 2022_8_18 周四 17_38_33-16608159928027.png)
-
-![npm config get registry 2022_8_18 周四 17_39_15](/../Sebsslpwthkybd.github.io/_posts/2022-8-1-start_project.assets/npm config get registry 2022_8_18 周四 17_39_15-16608159955919.png)
-
 ### /src
 
 #### 	./assets

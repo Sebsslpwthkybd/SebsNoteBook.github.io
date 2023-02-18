@@ -100,8 +100,6 @@ ps -e|grep ssh
 service ssh status
 ```
 
-![image-20220424162630580](D:\code\SebsNoteBook.github.io\_posts\2022-4-24-hadoop.assets\image-20220424162630580.png)
-
 赋予ssh服务全部权限
 
 ```
