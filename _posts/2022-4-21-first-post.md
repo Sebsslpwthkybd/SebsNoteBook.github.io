@@ -25,4 +25,3 @@ int main(){
 }
 ```
 
-![IMG_0979](../assets/blog_res/2022-4-21-first-post/IMG_0979-16767042976493.jpg)
