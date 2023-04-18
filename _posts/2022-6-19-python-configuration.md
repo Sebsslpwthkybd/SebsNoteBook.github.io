@@ -260,7 +260,7 @@ yum install libjpeg libjpeg-devel
 yum install freetype freetype-devel
 ```
 
-重新测试
+重新测试(千万不要加--opti什么的参数)
 
 ```
 ./Python-3.8.13/configure

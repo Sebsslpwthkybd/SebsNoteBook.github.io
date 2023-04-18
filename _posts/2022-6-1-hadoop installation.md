@@ -265,7 +265,7 @@ vim core-site.xml
 </configuration>
 ```
 
-修改hdfs-site.xml
+xxxxxxxxxx sudo apt install docker-ce docker-ce-cli containerd.iotext
 
 ```
 vim hdfs-site.xml
