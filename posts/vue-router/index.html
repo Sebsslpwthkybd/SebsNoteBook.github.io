@@ -1,0 +1,245 @@
+<!DOCTYPE html><html lang="zh-CN" data-mode="dark" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover" ><meta name="generator" content="Jekyll v4.3.2" /><meta property="og:title" content="1.130-vue-router的引入" /><meta name="author" content="Sebastian Lee" /><meta property="og:locale" content="zh_CN" /><meta name="description" content="安装vue-router插件" /><meta property="og:description" content="安装vue-router插件" /><link rel="canonical" href="https://sebsslpwthkybd.github.io/posts/vue-router/" /><meta property="og:url" content="https://sebsslpwthkybd.github.io/posts/vue-router/" /><meta property="og:site_name" content="Sebs抱着键盘睡觉" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2022-09-03T10:00:00+00:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="1.130-vue-router的引入" /><meta name="twitter:site" content="@twitter_username" /><meta name="twitter:creator" content="@Sebastian Lee" /> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Sebastian Lee"},"dateModified":"2022-09-03T10:00:00+00:00","datePublished":"2022-09-03T10:00:00+00:00","description":"安装vue-router插件","headline":"1.130-vue-router的引入","mainEntityOfPage":{"@type":"WebPage","@id":"https://sebsslpwthkybd.github.io/posts/vue-router/"},"url":"https://sebsslpwthkybd.github.io/posts/vue-router/"}</script><title>1.130-vue-router的引入 | Sebs抱着键盘睡觉</title><link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/assets/img/favicons/site.webmanifest"><link rel="shortcut icon" href="/assets/img/favicons/favicon.ico"><meta name="apple-mobile-web-app-title" content="Sebs抱着键盘睡觉"><meta name="application-name" content="Sebs抱着键盘睡觉"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://cdn.jsdelivr.net" ><link rel="dns-prefetch" href="https://cdn.jsdelivr.net" ><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css"><link rel="stylesheet" href="/assets/css/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.20.1/dist/tocbot.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1/dist/magnific-popup.min.css"> <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script><body data-topbar-visible="true"><div id="sidebar" class="d-flex flex-column align-items-end"><div class="profile-wrapper text-center"><div id="avatar"> <a href="/" class="mx-auto"> <img src="/assets/config/avatar.jpg" alt="avatar" onerror="this.style.display='none'"> </a></div><div class="site-title"> <a href="/">Sebs抱着键盘睡觉</a></div><div class="site-subtitle font-italic">随便写写</div></div><ul class="w-100"><li class="nav-item"> <a href="/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>首页</span> </a><li class="nav-item"> <a href="/categories/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>分类</span> </a><li class="nav-item"> <a href="/tags/" class="nav-link"> <i class="fa-fw fas fa-tags ml-xl-3 mr-xl-3 unloaded"></i> <span>标签</span> </a><li class="nav-item"> <a href="/archives/" class="nav-link"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>归档</span> </a><li class="nav-item"> <a href="/about/" class="nav-link"> <i class="fa-fw fas fa-info ml-xl-3 mr-xl-3 unloaded"></i> <span>关于</span> </a></ul><div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center"> <a href="https://github.com/sebsslpwthkybd" aria-label="github" target="_blank" rel="noopener noreferrer"> <i class="fab fa-github"></i> </a> <a href="https://twitter.com/twitter_username" aria-label="twitter" target="_blank" rel="noopener noreferrer"> <i class="fab fa-twitter"></i> </a> <a href="javascript:location.href = 'mailto:' + ['sebslisonghao','outlook.com'].join('@')" aria-label="email" > <i class="fas fa-envelope"></i> </a> <a href="/feed.xml" aria-label="rss" > <i class="fas fa-rss"></i> </a></div></div><div id="topbar-wrapper"><div id="topbar" class="container d-flex align-items-center justify-content-between h-100 pl-3 pr-3 pl-md-4 pr-md-4"> <span id="breadcrumb"> <span> <a href="/"> 首页 </a> </span> <span>1.130-vue-router的引入</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> 文章</div><i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off" placeholder="搜索..."> </span> <span id="search-cancel" >取消</span></div></div><div id="main-wrapper" class="d-flex justify-content-center"><div id="main" class="container pl-xl-4 pr-xl-4"><div class="row"><div id="core-wrapper" class="col-12 col-lg-11 col-xl-9 pr-xl-4"><div class="post pl-1 pr-1 pl-md-2 pr-md-2"><h1 data-toc-skip>1.130-vue-router的引入</h1><div class="post-meta text-muted"> <span> 发表于 <em class="" data-ts="1662199200" data-df="YYYY/MM/DD" data-toggle="tooltip" data-placement="bottom"> 2022/09/03 </em> </span><div class="d-flex justify-content-between"> <span> 作者 <em> <a href=""></a> </em> </span><div> <span class="readtime" data-toggle="tooltip" data-placement="bottom" title="645 字"> <em>3 分钟</em>阅读</span></div></div></div><div class="post-content"><h2 id="安装vue-router插件"><span class="mr-2">安装vue-router插件</span><a href="#安装vue-router插件" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>npm install vue-router -S
+</pre></table></code></div></div><h2 id="配置路由规则routerindexjs"><span class="mr-2">配置路由规则（@/router/index.js）</span><a href="#配置路由规则routerindexjs" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><h3 id="使用vue-router"><span class="mr-2">使用vue-router</span><a href="#使用vue-router" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre><td class="rouge-code"><pre>import Vue from 'vue'
+import VueRouter from 'vue-router'
+
+Vue.use(VueRouter)
+</pre></table></code></div></div><h3 id="配置路由跳转规则去到哪个组件"><span class="mr-2">配置路由跳转规则（去到哪个组件）</span><a href="#配置路由跳转规则去到哪个组件" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre><td class="rouge-code"><pre>const routes = [
+  {
+    path: '/',
+    name: 'home',
+    component: HomeView
+  }
+]
+</pre></table></code></div></div><h3 id="全域声明"><span class="mr-2">全域声明</span><a href="#全域声明" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre>const router = new VueRouter({
+  routes
+})
+
+export default router
+</pre></table></code></div></div><h3 id="mainjs中使用vue-router"><span class="mr-2">main.js中使用vue-router</span><a href="#mainjs中使用vue-router" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre>window.app = new Vue({
+  router,  // 使用vue-router
+  store,
+  render: h =&gt; h(App)
+}).$mount('#app')
+</pre></table></code></div></div><h2 id="路由的使用"><span class="mr-2">路由的使用</span><a href="#路由的使用" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><h3 id="组件渲染的位置会自动替换并渲染"><span class="mr-2">组件渲染的位置(会自动替换并渲染)</span><a href="#组件渲染的位置会自动替换并渲染" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>&lt;router-view&gt;&lt;/router-view&gt;
+</pre></table></code></div></div><h3 id="模板中实现跳转跳转触发器a标签"><span class="mr-2">模板中实现跳转（跳转触发器(a标签)）</span><a href="#模板中实现跳转跳转触发器a标签" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>&lt;router-link to="/about"&gt;&lt;/router-link&gt;
+</pre></table></code></div></div><h2 id="动态路由匹配"><span class="mr-2">动态路由匹配</span><a href="#动态路由匹配" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><h3 id="匹配参数"><span class="mr-2">匹配参数</span><a href="#匹配参数" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><h4 id="设置动态匹配规则参数为name"><span class="mr-2">设置动态匹配规则，参数为:name</span><a href="#设置动态匹配规则参数为name" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre>const router = new VueRouter({
+  routes: [
+    { path: '/detail/:id', component:Detail }
+  ]
+})
+</pre></table></code></div></div><h4 id="在组件中获取匹配参数和查询sightlist456"><span class="mr-2">在组件中获取匹配参数和查询（/sight/list/456）</span><a href="#在组件中获取匹配参数和查询sightlist456" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4><h5 id="javascript中获取参数"><span class="mr-2">JavaScript中获取参数</span><a href="#javascript中获取参数" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>let id = this.$route.params.id
+</pre></table></code></div></div><h5 id="动态响应参数变化监听"><span class="mr-2">动态响应参数变化（监听）</span><a href="#动态响应参数变化监听" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre><td class="rouge-code"><pre>watch: {
+  $route(to, from){
+  // 对路有变化作出响应
+    this.id = this.$route.params.id
+  },
+  id (to, from){
+  // 还可以监听data里的变量变化
+  }
+}
+</pre></table></code></div></div><h3 id="查询参数"><span class="mr-2">查询参数</span><a href="#查询参数" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><h4 id="不需要设置动态匹配规则"><span class="mr-2">不需要设置动态匹配规则</span><a href="#不需要设置动态匹配规则" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4><h4 id="在组件中获取查询参数和查询sightlist456name456"><span class="mr-2">在组件中获取查询参数和查询（/sight/list/456?name=456）</span><a href="#在组件中获取查询参数和查询sightlist456name456" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4><h5 id="javascript中获取参数-1"><span class="mr-2">JavaScript中获取参数</span><a href="#javascript中获取参数-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>let name = this.$route.query.name
+</pre></table></code></div></div><h5 id="获取多个查询参数sightlist456name456sortasc"><span class="mr-2">获取多个查询参数（/sight/list/456?name=456&amp;sort=asc）</span><a href="#获取多个查询参数sightlist456name456sortasc" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5><p>JavaScript中获取参数</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre>let name = this.$route.query.name
+let sort = this.$route.query.sort
+</pre></table></code></div></div><h2 id="页面跳转"><span class="mr-2">页面跳转</span><a href="#页面跳转" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><h3 id="在模板中跳转"><span class="mr-2">在模板中跳转</span><a href="#在模板中跳转" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre>&lt;template&gt;
+  &lt;router-link to="/sight/sight/list"&gt;&lt;/router-link&gt;
+&lt;/template&gt;
+</pre></table></code></div></div><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre><td class="rouge-code"><pre>&lt;template&gt;
+  &lt;router-link :to='"/sight/" + id + "/" + types'&gt;&lt;/router-link&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+  export default {
+    data () {
+      return {
+        id: 456,
+        types: 'type2'
+      }
+    }
+  }
+&lt;/script&gt;
+</pre></table></code></div></div><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre><td class="rouge-code"><pre>&lt;template&gt;
+  &lt;router-link :to="{ path:'/sight/' + id }"&gt;&lt;/router-link&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+  export default {
+    data () {
+      return {
+        id: 456
+      }
+    }
+  }
+&lt;/script&gt;
+</pre></table></code></div></div><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre><td class="rouge-code"><pre>&lt;template&gt;
+  &lt;router-link :to="{path: '/sight', query: { id: 'this.id'}}"&gt;&lt;/router-link&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+  export default {
+    data () {
+      return {
+        id: 456
+      }
+    }
+  }
+&lt;/script&gt;
+</pre></table></code></div></div><h4 id="路由命名"><span class="mr-2">路由命名</span><a href="#路由命名" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4><h5 id="取名字routerindexjs"><span class="mr-2">取名字（@/router/index.js）</span><a href="#取名字routerindexjs" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre><td class="rouge-code"><pre>const routes = [
+  {
+    path: '/',
+    name: 'home',  // 取名
+    component: HomeView
+  }
+]
+</pre></table></code></div></div><h5 id="按照名字跳转"><span class="mr-2">按照名字跳转</span><a href="#按照名字跳转" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre><td class="rouge-code"><pre>&lt;template&gt;
+  &lt;router-link :to="{name:'home', params: {types: 'types2'}, query: {id: 'this.id'}}"&gt;&lt;/router-link&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+  export default {
+    data () {
+      return {
+        id: 456
+      }
+    }
+  }
+&lt;/script&gt;
+</pre></table></code></div></div><h3 id="在js中跳转thisrouterpush"><span class="mr-2">在JS中跳转（this.$router.push）</span><a href="#在js中跳转thisrouterpush" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><h4 id="跳转至指定页"><span class="mr-2">跳转至指定页</span><a href="#跳转至指定页" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre><td class="rouge-code"><pre>&lt;template&gt;
+  &lt;a href="javascript:;" @click="goHome"&gt;&lt;/a&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+  export default {
+    methods: {
+      goHome () {
+        this.$router.push({name: 'home', params: {types: 'types2'}, query: {id: 'this.id'}})
+      }
+    }
+  }
+&lt;/script&gt;
+</pre></table></code></div></div><h4 id="页面前进或后退thisroutergo"><span class="mr-2">页面前进或后退（this.$router.go）</span><a href="#页面前进或后退thisroutergo" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>this.$router.go(n)
+</pre></table></code></div></div><h5 id="前进"><span class="mr-2">前进</span><a href="#前进" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>this.$router.go(1)
+</pre></table></code></div></div><h5 id="后退"><span class="mr-2">后退</span><a href="#后退" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>this.$router.go(-1)
+</pre></table></code></div></div><h4 id="替换浏览历史替换当前页面并且不能后退"><span class="mr-2">替换浏览历史（替换当前页面并且不能后退）</span><a href="#替换浏览历史替换当前页面并且不能后退" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>this.$router.replace(location, onComplete?, onAbort?)
+</pre></table></code></div></div></div><div class="post-tail-wrapper text-muted"><div class="post-meta mb-3"> <i class="far fa-folder-open fa-fw mr-1"></i> <a href='/categories/online-traveling/'>Online_traveling</a></div><div class="post-tags"> <i class="fa fa-tags fa-fw mr-1"></i> <a href="/tags/django-vue/" class="post-tag no-text-decoration" >django+vue</a></div><div class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2"><div class="license-wrapper"> 本文由作者按照 <a href="https://creativecommons.org/licenses/by/4.0/"> CC BY 4.0 </a> 进行授权</div><div class="share-wrapper"> <span class="share-label text-muted mr-1">分享</span> <span class="share-icons"> <a href="https://twitter.com/intent/tweet?text=1.130-vue-router%E7%9A%84%E5%BC%95%E5%85%A5%20-%20Sebs%E6%8A%B1%E7%9D%80%E9%94%AE%E7%9B%98%E7%9D%A1%E8%A7%89&url=https%3A%2F%2Fsebsslpwthkybd.github.io%2Fposts%2Fvue-router%2F" data-toggle="tooltip" data-placement="top" title="Twitter" target="_blank" rel="noopener" aria-label="Twitter"> <i class="fa-fw fab fa-twitter"></i> </a> <a href="https://www.facebook.com/sharer/sharer.php?title=1.130-vue-router%E7%9A%84%E5%BC%95%E5%85%A5%20-%20Sebs%E6%8A%B1%E7%9D%80%E9%94%AE%E7%9B%98%E7%9D%A1%E8%A7%89&u=https%3A%2F%2Fsebsslpwthkybd.github.io%2Fposts%2Fvue-router%2F" data-toggle="tooltip" data-placement="top" title="Facebook" target="_blank" rel="noopener" aria-label="Facebook"> <i class="fa-fw fab fa-facebook-square"></i> </a> <a href="https://t.me/share/url?url=https%3A%2F%2Fsebsslpwthkybd.github.io%2Fposts%2Fvue-router%2F&text=1.130-vue-router%E7%9A%84%E5%BC%95%E5%85%A5%20-%20Sebs%E6%8A%B1%E7%9D%80%E9%94%AE%E7%9B%98%E7%9D%A1%E8%A7%89" data-toggle="tooltip" data-placement="top" title="Telegram" target="_blank" rel="noopener" aria-label="Telegram"> <i class="fa-fw fab fa-telegram"></i> </a> <i id="copy-link" class="fa-fw fas fa-link small" data-toggle="tooltip" data-placement="top" title="分享链接" data-title-succeed="链接已复制！"> </i> </span></div></div></div></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted"><div class="access"><div id="access-lastmod" class="post"><div class="panel-heading">最近更新</div><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li><a href="/posts/hadoop-installation/">linux下安装hadoop并部署全分布</a><li><a href="/posts/python-configuration/">项目配置</a><li><a href="/posts/MongoDB/">MongoDB</a><li><a href="/posts/first-post/">我的第一篇博文</a><li><a href="/posts/Linux-configuration/">linux基础配置</a></ul></div><div id="access-tags"><div class="panel-heading">热门标签</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/django-vue/">django+vue</a> <a class="post-tag" href="/tags/mongodb/">MongoDB</a> <a class="post-tag" href="/tags/hadoop/">hadoop</a> <a class="post-tag" href="/tags/configuration/">configuration</a> <a class="post-tag" href="/tags/redis/">Redis</a> <a class="post-tag" href="/tags/data-structure/">data structure</a> <a class="post-tag" href="/tags/fine-report/">fine report</a> <a class="post-tag" href="/tags/fire-smoke-detect/">fire-smoke-detect</a> <a class="post-tag" href="/tags/ubuntu/">ubuntu</a> <a class="post-tag" href="/tags/vgaokao/">VGaokao</a></div></div></div><div id="toc-wrapper" class="pl-0 pr-4 mb-5"><div class="panel-heading pl-3 pt-2 mb-2">文章内容</div><nav id="toc"></nav></div><script src="https://cdn.jsdelivr.net/npm/tocbot@4.20.1/dist/tocbot.min.js"></script></div></div><div class="row"><div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 pl-3 pr-3 pr-xl-4 mt-5"><div id="related-posts" class="mb-2 mb-sm-4"><h3 class="pt-2 mb-4 ml-1" data-toc-skip>相关文章</h3><div class="card-deck mb-4"><div class="card"> <a href="/posts/cors_settings/"><div class="card-body"> <em class="small" data-ts="1660903200" data-df="YYYY/MM/DD" > 2022/08/19 </em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>1.10-跨域问题的解决</h3><div class="text-muted small"><p> Vue 重定向（vue.config.js） // Node.js里的模块 module.exports = { devServer: { proxy: { &#39;/api&#39;: { target: &#39;http://localhost:8000&#39;, changeOrigin: true, pathRewrite: { ...</p></div></div></a></div><div class="card"> <a href="/posts/BannerBox/"><div class="card-body"> <em class="small" data-ts="1660989600" data-df="YYYY/MM/DD" > 2022/08/20 </em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>1.111-首页功能(轮播图组件开发)</h3><div class="text-muted small"><p> 前端 轮播图组件(@/home/BannerBox) 在VantUI的展示组件中找到轮播图 &amp;lt;van-swipe class=&quot;my-swipe&quot; :autoplay=&quot;3000&quot; indicator-color=&quot;white&quot;&amp;gt; &amp;lt;van-swipe-item&amp;gt;1&amp;lt;/van-swipe-item&amp;gt; &amp;lt;van-swipe-item&amp;gt...</p></div></div></a></div><div class="card"> <a href="/posts/HotBox/"><div class="card-body"> <em class="small" data-ts="1661076000" data-df="YYYY/MM/DD" > 2022/08/21 </em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>1.112-首页功能(热门推荐组件开发)</h3><div class="text-muted small"><p> 前端 热门推荐组件(@/home/HotBox) 1、VantUI中找到左右结构的单元格 &amp;lt;van-cell-group&amp;gt; &amp;lt;van-cell title=&quot;单元格&quot; value=&quot;内容&quot; /&amp;gt; &amp;lt;van-cell title=&quot;单元格&quot; value=&quot;内容&quot; label=&quot;描述信息&quot; /&amp;gt; &amp;lt;/van-cell-group&amp;gt; ...</p></div></div></a></div></div></div><div class="post-navigation d-flex justify-content-between"> <a href="/posts/sight-check/" class="btn btn-outline-primary" prompt="上一篇"><p>1.124-sight接口联调</p></a> <a href="/posts/Search/" class="btn btn-outline-primary" prompt="下一篇"><p>1.131-搜索功能</p></a></div></div></div></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content"><div id="search-hints"><div id="access-tags"><div class="panel-heading">热门标签</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/django-vue/">django+vue</a> <a class="post-tag" href="/tags/mongodb/">MongoDB</a> <a class="post-tag" href="/tags/hadoop/">hadoop</a> <a class="post-tag" href="/tags/configuration/">configuration</a> <a class="post-tag" href="/tags/redis/">Redis</a> <a class="post-tag" href="/tags/data-structure/">data structure</a> <a class="post-tag" href="/tags/fine-report/">fine report</a> <a class="post-tag" href="/tags/fire-smoke-detect/">fire-smoke-detect</a> <a class="post-tag" href="/tags/ubuntu/">ubuntu</a> <a class="post-tag" href="/tags/vgaokao/">VGaokao</a></div></div></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><footer><div class="container pl-lg-4 pr-lg-4"><div class="d-flex justify-content-between align-items-center text-muted ml-md-3 mr-md-3"><div class="footer-left"><p class="mb-0"> © 2023 <a href="https://twitter.com/username">Sebastian</a>. <span data-toggle="tooltip" data-placement="top" title="除非另有说明，本网站上的博客文章均由作者按照知识共享署名 4.0 国际 (CC BY 4.0) 许可协议进行授权。">保留部分权利。</span></p></div><div class="footer-right"><p class="mb-0">本站由 <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> 生成，采用 <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> 主题。</p></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js"></script> <script> (function () { function updateMermaid(event) { if (event.source === window && event.data && event.data.direction === ModeToggle.ID) { const mode = event.data.message; if (typeof mermaid === "undefined") { return; } let expectedTheme = (mode === ModeToggle.DARK_MODE ? "dark" : "default"); let config = {theme: expectedTheme}; /* Re-render the SVG › <https://github.com/mermaid-js/mermaid/issues/311#issuecomment-332557344> */ $(".mermaid").each(function () { let svgCode = $(this).prev().children().html(); $(this).removeAttr("data-processed"); $(this).html(svgCode); }); mermaid.initialize(config); mermaid.init(undefined, ".mermaid"); } } let initTheme = "default"; if ($("html[data-mode=dark]").length > 0 || ($("html[data-mode]").length == 0 && window.matchMedia("(prefers-color-scheme: dark)").matches)) { initTheme = "dark"; } let mermaidConf = { theme: initTheme /* <default|dark|forest|neutral> */ }; /* Create mermaid tag */ $("pre").has("code.language-mermaid").each(function () { let svgCode = $(this).children().html(); $(this).addClass("unloaded"); $(this).after(`<pre class=\"mermaid\">${svgCode}</pre>`); }); mermaid.initialize(mermaidConf); window.addEventListener("message", updateMermaid); })(); </script><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a> <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5">搜索结果为空</p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script> <script src="https://cdn.jsdelivr.net/combine/npm/magnific-popup@1/dist/jquery.magnific-popup.min.js,npm/lazysizes@5.3.2/lazysizes.min.js,npm/clipboard@2/dist/clipboard.min.js"></script> <script src="https://cdn.jsdelivr.net/combine/npm/dayjs@1/dayjs.min.js,npm/dayjs@1/locale/zh.min.js,npm/dayjs@1/plugin/relativeTime.min.js,npm/dayjs@1/plugin/localizedFormat.min.js"></script> <script defer src="/assets/js/dist/post.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.bundle.min.js"></script> <script defer src="/unregister.js"></script>
